@@ -149,8 +149,12 @@ function route(container) {
   var number = window.location.pathname;
   console.log(number);
   var app = document.querySelector('#app');
-  number = number || 1; // 默认路由
-  // 获取界面
+
+  if (number === '/') {
+    // 默认路由
+    number = '/1';
+  } // 获取界面
+
 
   var div = routeTable[number.toString()]; // 渲染界面
 
@@ -193,7 +197,6 @@ try {
 route(app);
 
 function onStateChange() {
-  console.log('state变了');
   route(app);
 }
 },{}],"C:/Users/asus/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {

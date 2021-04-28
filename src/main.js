@@ -20,7 +20,9 @@ function route(container) {    // 参数代表显示页面的容器
     let number = window.location.pathname
     console.log(number)
     let app = document.querySelector('#app')
-    number = number || 1    // 默认路由
+    if (number === '/') {   // 默认路由
+        number = '/1'
+    }
     // 获取界面
     let div = routeTable[number.toString()]
     // 渲染界面
@@ -46,7 +48,6 @@ for (let taga of allA) {
 route(app)
 
 function onStateChange() {
-    console.log('state变了')
     route(app)
 }
 
